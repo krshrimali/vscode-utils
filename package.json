@@ -1,0 +1,72 @@
+{
+    "name": "tgkrsutil",
+    "displayName": "Test and Code Utilities from TGKRS",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "tgkrsutil.runTest",
+                "title": "Run Test on Function"
+            },
+            {
+                "command": "tgkrsutil.runTestNewTerminal",
+                "title": "Run Test in New Terminal"
+            },
+            {
+                "command": "tgkrsutil.copyTestCommand",
+                "title": "Copy Test Command"
+            },
+            {
+                "command": "tgkrsutil.copyParentFunction",
+                "title": "Copy Parent Function"
+            },
+            {
+                "command": "tgkrsutil.copyParentClass",
+                "title": "Copy Parent Class"
+            }
+        ]
+    },
+    "dependencies": {
+        "@vscode/vsce": "^3.4.2",
+        "generator-code": "^1.11.9",
+        "yo": "^5.1.0"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^8.1.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "22.15.29",
+        "@types/vscode": "^1.79.0",
+        "@typescript-eslint/eslint-plugin": "8.33.1",
+        "@typescript-eslint/parser": "8.33.1",
+        "@vscode/test-electron": "^2.3.2",
+        "@vscode/vsce": "^3.4.0",
+        "eslint": "9.28.0",
+        "glob": "11.0.2",
+        "mocha": "11.5.0",
+        "ts-loader": "9.5.2",
+        "typescript": "5.8.3",
+        "webpack": "5.99.9",
+        "webpack-cli": "6.0.1"
+    }
+}
