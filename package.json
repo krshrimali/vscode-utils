@@ -1,7 +1,10 @@
 {
     "name": "tgkrsutil",
-    "displayName": "Test and Code Utilities from TGKRS",
-    "version": "0.1.0",
+    "displayName": "VSCode Utilities",
+    "description": "General utilities for VSCode from TGKRS",
+    "author": "Kushashwa Ravi Shrimali",
+    "publisher": "tgkrs",
+    "version": "1.1.4",
     "engines": {
         "vscode": "^1.85.0"
     },
@@ -16,23 +19,33 @@
         "commands": [
             {
                 "command": "tgkrsutil.runTest",
-                "title": "Run Test on Function"
+                "title": "Run Test on Function",
+                "category": "TGKRSUtil"
             },
             {
                 "command": "tgkrsutil.runTestNewTerminal",
-                "title": "Run Test in New Terminal"
+                "title": "Run Test in New Terminal",
+                "category": "TGKRSUtil"
             },
             {
                 "command": "tgkrsutil.copyTestCommand",
-                "title": "Copy Test Command"
+                "title": "Copy Test Command",
+                "category": "TGKRSUtil"
             },
             {
                 "command": "tgkrsutil.copyParentFunction",
-                "title": "Copy Parent Function"
+                "title": "Copy Parent Function",
+                "category": "TGKRSUtil"
             },
             {
                 "command": "tgkrsutil.copyParentClass",
-                "title": "Copy Parent Class"
+                "title": "Copy Parent Class",
+                "category": "TGKRSUtil"
+            },
+            {
+                "command": "tgkrsutil.debugSymbols",
+                "title": "Debug Symbols",
+                "category": "TGKRSUtil"
             }
         ]
     },
