@@ -1,10 +1,10 @@
 {
-    "name": "tgkrsutil",
-    "displayName": "VSCode Utilities",
+    "name": "vscode-utilities",
+    "displayName": "VSCode Treesitter Type Utilities",
     "description": "General utilities for VSCode from TGKRS",
     "author": "Kushashwa Ravi Shrimali",
     "publisher": "tgkrs",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "engines": {
         "vscode": "^1.85.0"
     },
