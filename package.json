@@ -4,7 +4,7 @@
     "description": "General utilities for VSCode from TGKRS",
     "author": "Kushashwa Ravi Shrimali",
     "publisher": "tgkrs",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "engines": {
         "vscode": "^1.85.0"
     },
@@ -47,7 +47,22 @@
                 "title": "Debug Symbols",
                 "category": "TGKRSUtil"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "tgkrsutil",
+            "properties": {
+            "tgkrsutil.testCommandTemplate": {
+                "type": "string",
+                "default": "pytest \"${file}\" -k \"${test}\"",
+                "description": "Template for the test command. Use ${file} and ${test}."
+            },
+            "tgkrsutil.testCommandFlags": {
+                "type": "string",
+                "default": "",
+                "description": "Additional flags to be appended to the test command."
+            }
+            }
+        }
     },
     "repository": {
         "type": "git",

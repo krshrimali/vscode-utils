@@ -114,7 +114,18 @@ async function runTest(newTerminal: boolean) {
     if (!editor) return;
 
     const filePath = editor.document.uri.fsPath;
-    const testCmd = `pytest "${filePath}" -k "${symbol.name}"`;
+    const config = vscode.workspace.getConfiguration('tgkrsutil');
+    const template = config.get('testCommandTemplate', 'pytest "${file}" -k "${test}"');
+    const extraFlags = config.get('testCommandFlags', '');
+
+    let testCmd = template
+        .replace('${file}', filePath)
+        .replace('${test}', symbol.name)
+        .trim();
+
+    if (extraFlags) {
+        testCmd += ' ' + extraFlags;
+    }
 
     if (newTerminal) {
         const terminal = vscode.window.createTerminal('Test Runner');
@@ -139,7 +150,18 @@ async function copyTestCommand() {
     if (!editor) return;
 
     const filePath = editor.document.uri.fsPath;
-    const testCmd = `pytest "${filePath}" -k "${symbol.name}"`;
+    const config = vscode.workspace.getConfiguration('tgkrsutil');
+    const template = config.get('testCommandTemplate', 'pytest "${file}" -k "${test}"');
+    const extraFlags = config.get('testCommandFlags', '');
+
+    let testCmd = template
+        .replace('${file}', filePath)
+        .replace('${test}', symbol.name)
+        .trim();
+
+    if (extraFlags) {
+        testCmd += ' ' + extraFlags;
+    }
 
     vscode.env.clipboard.writeText(testCmd);
     vscode.window.showInformationMessage('Test command copied to clipboard');

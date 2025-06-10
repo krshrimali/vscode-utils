@@ -4,6 +4,9 @@
 
 ## Features
 
+- **Customizable Pytest Command & Flags**
+  Configure the test runner command and extra flags to suit your project, even for non-pytest runners.
+
 - **Run Pytest Function Under Cursor**
   Run the nearest test function or method using `pytest`, in a new or existing terminal.
 
@@ -18,6 +21,20 @@
 
 - **Debug Document Symbols**
   Shows a structured symbol tree for the current file, highlighting which symbols contain the cursor.
+
+## Customization
+
+You can customize the test command and flags via your VSCode settings.json:
+
+```json
+"tgkrsutil.testCommandTemplate": "pytest \"${file}\" -k \"${test}\" --tb=short",
+"tgkrsutil.testCommandFlags": "--maxfail=2"
+```
+
+- Use `${file}` to insert the source file path.
+- Use `${test}` to insert the enclosing function or method name.
+
+Additional flags in `tgkrsutil.testCommandFlags` will be appended to the command.
 
 ## Available Commands
 
